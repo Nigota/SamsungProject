@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_vertical"
+    android:orientation="vertical"
+    tools:context=".HomeFragment">
+
+    <Button
+        android:id="@+id/open_lib"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:layout_margin="15dp"
+        android:gravity="center"
+        android:text="Открыть библиотеку" />
+
+    <Button
+        android:id="@+id/add_word"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:layout_margin="15dp"
+        android:gravity="center"
+        android:text="Добавить слово" />
+
+    <Button
+        android:id="@+id/download"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:layout_margin="15dp"
+        android:gravity="center"
+        android:text="Загрузить слова" />
+</LinearLayout>
