@@ -77,6 +77,17 @@ public class DBWords {
         return arr;
     }
 
+    public Word select(long id) {
+        Cursor mCursor = mDataBase.query(TABLE_NAME, null, COLUMN_ID + " = ?", new String[]{String.valueOf(id)}, null, null, null);
+
+        mCursor.moveToFirst();
+        String name = mCursor.getString(NUM_COLUMN_NAME);
+        String value = mCursor.getString(NUM_COLUMN_VALUE);
+        int stage = mCursor.getInt(NUM_COLUMN_STAGE);
+        long date = mCursor.getLong(NUM_COLUMN_DATE);
+        return new Word(id, name, value, stage, date);
+    }
+
     public ArrayList<Word> selectAll() {
         Cursor mCursor = mDataBase.query(TABLE_NAME, null, null, null, null, null, null);
 

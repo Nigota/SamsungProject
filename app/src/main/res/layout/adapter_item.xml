@@ -38,22 +38,6 @@
                 android:textSize="18sp"
                 android:visibility="gone" />
         </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/ch"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="right"
-            android:visibility="gone">
-
-            <CheckBox
-                android:id="@+id/checkBoxColor"
-                android:layout_width="45dp"
-                android:layout_height="45dp"
-                android:layout_gravity="center"
-                android:background="?android:attr/listChoiceIndicatorMultiple"
-                android:button="@null" />
-        </LinearLayout>
     </androidx.cardview.widget.CardView>
 
 </LinearLayout>
