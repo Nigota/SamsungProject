@@ -36,9 +36,9 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.learn:
                         getSupportFragmentManager().beginTransaction().replace(R.id.container, learnFragment).commit();
                         return true;
-                    case R.id.settings:
-                        getSupportFragmentManager().beginTransaction().replace(R.id.container, settingsFragment).commit();
-                        return true;
+//                    case R.id.settings:
+//                        getSupportFragmentManager().beginTransaction().replace(R.id.container, settingsFragment).commit();
+//                        return true;
                 }
                 return false;
             }

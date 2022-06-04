@@ -1,15 +1,23 @@
 package com.example.samsungproject;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.Toast;
 
+import androidx.activity.result.ActivityResult;
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.fragment.app.Fragment;
 
 public class HomeFragment extends Fragment {
+    static ActivityResultLauncher<Intent> fileLauncher;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -34,7 +42,30 @@ public class HomeFragment extends Fragment {
             }
         });
 
+        fileLauncher = registerForActivityResult(
+                new ActivityResultContracts.StartActivityForResult(),
+                new ActivityResultCallback<ActivityResult>() {
+                    @Override
+                    public void onActivityResult(ActivityResult result) {
+                        if (result.getResultCode() == Activity.RESULT_OK) {
+                            Intent data = result.getData();
+                            String path = data.getData().getPath();
+                            FileManager.readData(getContext(), "/storage/emulated/0/data.txt");
+                            Toast.makeText(getContext(), path, Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
+
         Button download = view.findViewById(R.id.download);
+        download.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
+                intent.addCategory(Intent.CATEGORY_OPENABLE);
+                intent.setType("*/*");
+                fileLauncher.launch(intent);
+            }
+        });
         return view;
     }
 }

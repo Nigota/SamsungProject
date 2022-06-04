@@ -47,6 +47,7 @@ public class EditActivity extends AppCompatActivity {
                 word.name = edit_name.getText().toString();
                 word.value = edit_value.getText().toString();
                 DB.update(word);
+                setResult(RESULT_CANCELED);
                 Toast.makeText(getApplicationContext(), "Изменения сохранены", Toast.LENGTH_SHORT).show();
                 finish();
             }

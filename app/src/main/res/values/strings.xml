@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">SamsungProject</string>
+    <string name="app_name">Розетка</string>
     <string name="title_activity_home_fragment">HomeFragment</string>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>

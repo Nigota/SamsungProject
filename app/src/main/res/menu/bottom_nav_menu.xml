@@ -9,8 +9,8 @@
         android:id="@+id/learn"
         android:icon="@drawable/ic_baseline_school_24"
         android:title="Учиться" />
-    <item
-        android:id="@+id/settings"
-        android:icon="@drawable/ic_baseline_settings_24"
-        android:title="Настройки" />
+<!--    <item-->
+<!--        android:id="@+id/settings"-->
+<!--        android:icon="@drawable/ic_baseline_settings_24"-->
+<!--        android:title="Настройки" />-->
 </menu>

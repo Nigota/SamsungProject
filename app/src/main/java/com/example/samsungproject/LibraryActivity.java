@@ -34,8 +34,8 @@ public class LibraryActivity extends AppCompatActivity {
                             Bundle data = result.getData().getExtras();
                             int pos = Integer.parseInt(data.get("pos").toString());
                             adapter.remove(adapter.getItem(pos));
-                            adapter.notifyDataSetChanged();
                         }
+                        adapter.notifyDataSetChanged();
                     }
                 });
     }
