@@ -7,7 +7,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.Toast;
 
 import androidx.activity.result.ActivityResult;
 import androidx.activity.result.ActivityResultCallback;
@@ -49,9 +48,9 @@ public class HomeFragment extends Fragment {
                     public void onActivityResult(ActivityResult result) {
                         if (result.getResultCode() == Activity.RESULT_OK) {
                             Intent data = result.getData();
-                            String path = data.getData().getPath();
-                            FileManager.readData(getContext(), "/storage/emulated/0/data.txt");
-                            Toast.makeText(getContext(), path, Toast.LENGTH_SHORT).show();
+                            String path = data.getData().getLastPathSegment();
+                            System.out.println(data.getData().getPath());
+                            FileManager.readData(getContext(), path);
                         }
                     }
                 });
